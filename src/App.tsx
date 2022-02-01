@@ -4,6 +4,7 @@ import { GlobalStyle } from './styles/global';
 import Modal from 'react-modal';
 import { useState } from 'react';
 import { NewTransactionModal } from './components/NewTransactionModal';
+import { TransactionsProvider } from './hooks/useTransactions';
 
 // const Title = styled.h1`
 //   font-size: 64px;
@@ -25,7 +26,7 @@ export function App() {
   }
 
   return (
-    <>
+    <TransactionsProvider>
       {/* <Title>
         Hello World
       </Title> */}
@@ -39,6 +40,6 @@ export function App() {
 
       <GlobalStyle />
       {/* <h1 className="Title">Hello World</h1> */}
-    </>
+    </TransactionsProvider>
   );
 }
